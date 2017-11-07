@@ -1,6 +1,6 @@
 var todos = ['item 1', 'item 2', 'item 3'];
 undefined
-todos
+todosnode
 (3) ["item 1", "item 2", "item 3"]
 console.log('hello there')
 VM163:1 hello there
