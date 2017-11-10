@@ -48,3 +48,51 @@ todos
 (3) ["item 2", "item 3", "item 4"]
 todos.splice(3, 1)
 []
+
+var todos =['item1', 'item2', 'item3']
+
+function displayTodos() {
+    console.log('My Todos:', todos);
+}
+displayTodos()
+VM103:4 My Todos: (3) ["item1", "item2", "item3"]
+undefined
+function addTodo() {
+    todos.push('new todo');
+	displayTodos();
+}
+undefined
+addTodo()
+VM103:4 My Todos: (6) ["item1", "item2", "item3", "new todo", "new todo", "new todo"]
+undefined
+function addTodo(todo) {
+    todos.push(todo);
+	displayTodos();
+}
+undefined
+addTodo('some stuff')
+VM103:4 My Todos: (7) ["item1", "item2", "item3", "new todo", "new todo", "new todo", "some stuff"]
+undefined
+function changeTodo(position, newValue) {
+     todos[position] = newValue;
+}
+undefined
+displayTodos()
+VM103:4 My Todos: (7) ["item1", "item2", "item3", "new todo", "new todo", "new todo", "some stuff"]
+undefined
+changeTodo(0, "changed")
+undefined
+displayTodos()
+VM103:4 My Todos: (7) ["changed", "item2", "item3", "new todo", "new todo", "new todo", "some stuff"]
+undefined
+function changeTodo(position, newValue) {
+     todos[position] = newValue;
+	 displayTodos();
+}
+undefined
+displayTodos()
+VM103:4 My Todos: (7) ["changed", "item2", "item3", "new todo", "new todo", "new todo", "some stuff"]
+undefined
+changeTodo(0, "changed again")
+VM103:4 My Todos: (7) ["changed again", "item2", "item3", "new todo", "new todo", "new todo", "some stuff"]
+undefined
