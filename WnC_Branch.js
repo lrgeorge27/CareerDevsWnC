@@ -17,3 +17,6 @@ todos.splice(3, 1);
 
 //Display an array
 console.log(todos);
+
+//Customize functions
+console.log('My Todos', todos);
