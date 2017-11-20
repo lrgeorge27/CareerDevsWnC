@@ -20,3 +20,41 @@ console.log(todos);
 
 //Customize functions
 console.log('My Todos', todos);
+
+//Customizing functions with var in ()
+function sayHiTo(person) {
+    console.log('hi', person);
+}
+console.log(sayHiTo('gordon'));
+
+//function to display todos
+function displayTodos() {
+    console.log('My todos:', todos);
+}
+
+//function to add todos
+function addTodo(todo) {
+    todos.push(todo);
+    displayTodos();
+}
+
+addTodo("hello there");
+
+//function to change todos
+function changeTodo(position, newValue) {
+    todos[position] = newValue;
+    displayTodos();
+}
+
+displayTodos();
+changeTodo(0, 'changed');
+changeTodo(0, 'changed again');
+
+//function to delete todos
+function deleteTodo(position) {
+    todos.splice(position, 1);
+    displayTodos();
+}
+
+deleteTodo(0);
+deleteTodo(2);
