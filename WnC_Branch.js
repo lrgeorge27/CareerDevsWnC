@@ -83,16 +83,20 @@ Lauren.sayName();
 
 //Store todos array on an object & create function methods
 var todoList = {
-    todos: ["item 1", "item 2", "item 3"],
+    todos: [],
     displayTodos: function() { //displayTodos method
         console.log("My Todos:", this.todos);
     },
-    addTodos: function(todo) { //addTodos method
-        this.todos.push(todo);
+    addTodos: function(todoText) { //addTodos method
+        this.todos.push({
+            todoText: todoText, //label: parameter
+            completed: false
+        });
         this.displayTodos();
     },
-    changeTodo: function(position, newValue) { //changeTodo method
-        this.todos[position] = newValue;
+    changeTodo: function(position, todoText) { //changeTodo method
+        //this.todos[position] = newValue;
+        this.todos[position].todoText = todoText;
         this.displayTodos();
     },
     deleteTodo: function(position) { //deleteTodo method
@@ -101,7 +105,16 @@ var todoList = {
     }
 };
 
-todoList.displayTodos();
-todoList.addTodos('c9');
-todoList.changeTodo(0, "first");
-todoList.deleteTodo(1);
+// todoList.displayTodos();
+// todoList.addTodos('c9');
+// todoList.changeTodo(0, "first");
+// todoList.deleteTodo(1);
+
+//Version 4 Booleans
+// {
+//     todoText: "item 1", 
+//     completed: false //boolean value true or false
+// }
+
+todoList.addTodos('first try');
+todoList.changeTodo(0, 'second try');
