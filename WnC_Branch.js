@@ -81,29 +81,36 @@ var Lauren = {
 };
 Lauren.sayName();
 
-//Store todos array on an object & create function methods
+//Store todos array on an object & create function methods, Version 3
+//Changed w/ Version 4 to create objects w/ Booleans
 var todoList = {
     todos: [],
     displayTodos: function() { //displayTodos method
         console.log("My Todos:", this.todos);
     },
     addTodos: function(todoText) { //addTodos method
-        this.todos.push({
-            todoText: todoText, //label: parameter
+        this.todos.push({ //addTodos now creates an object in an array instead of an item.
+            todoText: todoText, //label: parameter 
             completed: false
         });
         this.displayTodos();
     },
     changeTodo: function(position, todoText) { //changeTodo method
         //this.todos[position] = newValue;
-        this.todos[position].todoText = todoText;
+        this.todos[position].todoText = todoText; //changeTodo now creates new text in the todoText position of the object.
         this.displayTodos();
     },
     deleteTodo: function(position) { //deleteTodo method
         this.todos.splice(position, 1);
         this.displayTodos();
+    },
+    toggleCompleted: function(position) {
+        var todo = this.todos[position]; //var keeps us from having to type this.todos[position] on both sides of = in next line.
+        todo.completed = !todo.completed; //change value to opposite, false = !false (=true)
+        this.displayTodos();
     }
 };
+
 
 // todoList.displayTodos();
 // todoList.addTodos('c9');
@@ -118,3 +125,4 @@ var todoList = {
 
 todoList.addTodos('first try');
 todoList.changeTodo(0, 'second try');
+todoList.toggleCompleted(0);
