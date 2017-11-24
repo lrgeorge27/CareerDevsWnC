@@ -86,7 +86,22 @@ Lauren.sayName();
 var todoList = {
     todos: [],
     displayTodos: function() { //displayTodos method
-        console.log("My Todos:", this.todos);
+        if (this.todos.length === 0) { //Version 5 alerts us to an empty todo list
+            console.log("Your todo list is empty!"); //using if else statements and setting the array length strictly equal to 0.
+        }
+        else {
+            console.log("My Todos:");
+            for (var i = 0; i < this.todos.length; i++) { //Version 5 displays the todoText portion 
+                console.log(this.todos[i].todoText); //of the array objects.
+                //Version 5 check if .completed is true
+                if (this.todos[i].completed === true) {
+                    console.log('(x)', this.todos[i].todoText); //print with (x)
+                }
+                else {
+                    console.log('()', this.todos[i].todoText); //print with ()
+                }
+            }
+        }
     },
     addTodos: function(todoText) { //addTodos method
         this.todos.push({ //addTodos now creates an object in an array instead of an item.
@@ -123,6 +138,16 @@ var todoList = {
 //     completed: false //boolean value true or false
 // }
 
-todoList.addTodos('first try');
-todoList.changeTodo(0, 'second try');
-todoList.toggleCompleted(0);
+// todoList.addTodos('first try');
+// todoList.changeTodo(0, 'second try');
+// todoList.toggleCompleted(0);
+
+//Version 5 for loops
+// todoList.displayTodos();
+todoList.addTodos('first');
+todoList.addTodos('second');
+todoList.addTodos('third');
+todoList.addTodos('four');
+todoList.addTodos('fifth');
+todoList.toggleCompleted(1);
+todoList.toggleCompleted(2);
