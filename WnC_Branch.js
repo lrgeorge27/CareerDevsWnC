@@ -123,6 +123,30 @@ var todoList = {
         var todo = this.todos[position]; //var keeps us from having to type this.todos[position] on both sides of = in next line.
         todo.completed = !todo.completed; //change value to opposite, false = !false (=true)
         this.displayTodos();
+    },
+    toggleAll: function() { //version 6 creating the toggleAll method. If everything is true, make everything false. Otherwise, make everything true.
+        var totalTodos = this.todos.length;
+        var completedTodos = 0;
+        //Get number of completed todos
+        for (var i = 0; i < totalTodos; i++) {
+            if (this.todos[i].completed === true) {
+                completedTodos++;
+            }
+        }
+        //Case 1: if everything is true make everything false
+        if (completedTodos === totalTodos) {
+            //make everything false
+            for (var i = 0; i < totalTodos; i++) {
+                this.todos[i].completed = false;
+            }
+            //Case 2: Otherwise, make everything true.    
+        }
+        else {
+            for (var i = 0; i < totalTodos; i++) {
+                this.todos[i].completed = true;
+            }
+        }
+        this.displayTodos();
     }
 };
 
@@ -144,10 +168,42 @@ var todoList = {
 
 //Version 5 for loops
 // todoList.displayTodos();
+//Version 6 toggleAll
 todoList.addTodos('first');
 todoList.addTodos('second');
 todoList.addTodos('third');
-todoList.addTodos('four');
-todoList.addTodos('fifth');
-todoList.toggleCompleted(1);
-todoList.toggleCompleted(2);
+// todoList.addTodos('four');
+// todoList.addTodos('fifth');
+todoList.toggleCompleted(0);
+// todoList.toggleCompleted(1);
+// todoList.toggleCompleted(2);
+todoList.toggleAll();
+// todoList.toggleAll();
+
+//Interlude - Data types overview
+// Objects {} todoList, arrays, functions
+// Primatives (building blocks)
+// -String = 'text in quotes'
+// -Number = 1, 2, 3, 4 ...integers
+// -Boolean = true, false
+// -Undefined = value that hasn't been set, no variable
+// -Null = 'nothing' ex: score for an exam not taken
+
+// Comparisons with primitives(values)
+// 'text' === 'text', true
+// 'text' === 'text1', false
+// 1 === 1, true
+// 1 === 2, false
+// true === true, true
+// true === false, false
+// false === false, true
+
+// Comparisons with objects (refernces - saving a memory address so you can refer to the values)
+// {} === {}, false
+// [1, 2, 3] === [1, 2, 3], false
+// Identical street, comparisons only work when you are comparing the same house. 
+// JS doesn't care if the houses look identical, it is looking at the address, which is different.
+// Each object created has a unique memory address.
+// var houseA = {};
+// houseA === houseA;
+
