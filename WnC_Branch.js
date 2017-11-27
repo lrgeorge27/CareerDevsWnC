@@ -207,3 +207,7 @@ todoList.toggleAll();
 // var houseA = {};
 // houseA === houseA;
 
+//Version 7
+//DOM browsers interpretation of HTML
+//1. Get access to the display todos button
+var displayTodosButton = document
