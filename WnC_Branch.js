@@ -211,3 +211,10 @@ todoList.toggleAll();
 //DOM browsers interpretation of HTML
 //1. Get access to the display todos button
 var displayTodosButton = document
+
+// var myPrimitive = 10;
+// var myObject = {name: 'lauren'};
+// var myHouse = {color: 'blue'};
+// var color = myHouse.color
+// color = 'red';
+// myHouse.color = 'blue' at the end of demo
