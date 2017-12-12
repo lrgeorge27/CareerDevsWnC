@@ -207,14 +207,26 @@ todoList.toggleAll();
 // var houseA = {};
 // houseA === houseA;
 
-//Version 7
-//DOM browsers interpretation of HTML
-//1. Get access to the display todos button
-var displayTodosButton = document
-
+// Primitives & Objects
 // var myPrimitive = 10;
 // var myObject = {name: 'lauren'};
+
 // var myHouse = {color: 'blue'};
 // var color = myHouse.color
 // color = 'red';
 // myHouse.color = 'blue' at the end of demo
+
+// var myHouse1 = { color: 'blue' };
+// var myHouse2 = myHouse1;
+// myHouse2.color = 'red';
+//myHouse1.color and myHouse2.color both = 'red' at the end because they share an object memory address.
+
+//var myHouse1 = {color: 'blue'};
+// var myHouse2 = {color: 'blue'};
+// myHouse2.color = 'red';
+// myHouse1.color = 'blue', myHouse2.color = 'red' because they have different object memory addresses.
+
+//Version 7
+//DOM browsers interpretation of HTML
+//1. Get access to the display todos button
+var displayTodosButton = document
