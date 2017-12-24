@@ -11,12 +11,21 @@
 
 <body>
     <h1>Todo List</h1>
-
-    <button id="displayTodosButton">Display Todos</button>
-    <button id="toggleAllButton">Toggle All</button>
-
+    <div>
+        <button onclick="handlers.displayTodos()">Display Todos</button>
+        <button onclick="handlers.toggleAll()">Toggle All</button>
+    </div>
+    <div>
+        <button onclick="handlers.addTodos()">Add</button>
+        <input type="text" id="addTodoTextInput" />
+    </div>
+    <div>
+        <button onclick="handlers.changeTodos()">Change Todo</button>
+        <input id="changeTodoPositionInput" type="number">
+        <input id="changeTodoTextInput" type="text">
+    </div>
     <script src="WnC_Branch.js"></script>
-    <script src="version7.js"></script>
+    <script src="version8.js"></script>
 </body>
 
 </html>
