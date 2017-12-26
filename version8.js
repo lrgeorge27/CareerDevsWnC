@@ -73,9 +73,6 @@ var handlers = { //object handles all the methods for different events
     displayTodos: function() {
         todoList.displayTodos();
     },
-    toggleAll: function() {
-        todoList.toggleAll();
-    },
     addTodos: function() {
         var addTodoTextInput = document.getElementById("addTodoTextInput"); //grabing the text input
         todoList.addTodos(addTodoTextInput.value); //setting it as an argument to meet the parameter todoText
@@ -87,5 +84,18 @@ var handlers = { //object handles all the methods for different events
         todoList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value);
         changeTodoPositionInput.value = "";
         changeTodoTextInput.value = "";
+    },
+    deleteTodo: function() {
+        var deleteTodoPositionInput = document.getElementById("deleteTodoPositionInput");
+        todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
+        deleteTodoPositionInput = "";
+    },
+    toggleCompleted: function() {
+        var toggleCompletedPositionInput = document.getElementById("toggleCompletedPositionInput");
+        todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
+        toggleCompletedPositionInput = "";
+    },
+    toggleAll: function() {
+        todoList.toggleAll();
     }
 };
