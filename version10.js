@@ -95,7 +95,7 @@ var view = {
             else {
                 todoTextWithCompletion = "( ) " + todo.todoText;
             }
-
+            todoLi.id = i; //create an id and set it equal to the index number
             todoLi.textContent = todoTextWithCompletion; //replaces line below and includes completion info.
             // todoLi.textContent = todoList.todos[i].todoText; //adds the todoText to the list item
             todoLi.appendChild(this.createDeleteButton());
@@ -109,3 +109,8 @@ var view = {
         return deleteButton;
     }
 };
+
+var todosUl = document.querySelector("ul");
+todosUl.addEventListener('click', function(event) {
+    console.log(event.target.parentNode.id); //mouse event array.traget the portion of the element clicked, go into the parentNode to access the li id. Returns li id.
+});
