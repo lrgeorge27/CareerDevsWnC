@@ -61,10 +61,8 @@ var handlers = { //object handles all the methods for different events
         changeTodoTextInput.value = "";
         view.displayTodos();
     },
-    deleteTodo: function() {
-        var deleteTodoPositionInput = document.getElementById("deleteTodoPositionInput");
-        todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
-        deleteTodoPositionInput = "";
+    deleteTodo: function(position) {
+        todoList.deleteTodo(position);
         view.displayTodos();
     },
     toggleCompleted: function() {
@@ -102,15 +100,28 @@ var view = {
             todosUl.appendChild(todoLi); //places the list element with text into the unordered list.
         }
     },
+    //version 10
     createDeleteButton: function() {
         var deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete"; //html text in button
         deleteButton.className = "deleteButton";
         return deleteButton;
+    },
+    //event delegation
+    setUpEventListeners: function() {
+        var todosUl = document.querySelector("ul");
+        todosUl.addEventListener('click', function(event) { //single event listener, listens for all clicks on the ul.
+            console.log(event.target.parentNode.id); //mouse event array.traget the portion of the element clicked, go into the parentNode to access the li id. Returns li id.
+
+            //get the element that was clicked on. 
+            var elementClicked = event.target;
+
+            //check if elementClicked is a delete button.
+            if (elementClicked.className === 'deleteButton') {
+                handlers.deleteTodo(parseInt(elementClicked.parentNode.id)); //convert string to number
+            }
+        });
     }
 };
 
-var todosUl = document.querySelector("ul");
-todosUl.addEventListener('click', function(event) {
-    console.log(event.target.parentNode.id); //mouse event array.traget the portion of the element clicked, go into the parentNode to access the li id. Returns li id.
-});
+view.setUpEventListeners();
